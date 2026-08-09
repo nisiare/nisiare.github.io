@@ -1,1 +1,129 @@
-<p>hello world</p>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>nisiare — home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="page">
+    <header class="header">
+      <div class="header-inner">
+        <h1>nisiare</h1>
+        <p class="tag">personal portal — 2000s style</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <aside class="sidebar">
+        <nav>
+          <ul>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#habits">Habit Tracker</a></li>
+            <li><a href="#reminders">Reminders</a></li>
+            <li><a href="#trackers">Custom Trackers</a></li>
+            <li><a href="#anime">MyAnimeList</a></li>
+            <li><a href="#about">About / Help</a></li>
+          </ul>
+        </nav>
+
+        <section class="box">
+          <h3>Daily things</h3>
+          <ul class="mini-list" id="daily-list">
+            <li>brush teeth</li>
+            <li>make bed</li>
+            <li>wash face and do skincare</li>
+            <li>take shower (every 2-3 days?)</li>
+            <li>walk for an hour</li>
+            <li>mood</li>
+          </ul>
+        </section>
+
+        <section class="box">
+          <h3>Links</h3>
+          <ul class="mini-list">
+            <li><a href="https://myanimelist.net/animelist/nisiare?status=7" target="_blank">MyAnimeList</a></li>
+            <li><a href="#blog">Write a post</a></li>
+          </ul>
+        </section>
+
+      </aside>
+
+      <main class="main">
+
+        <section id="blog" class="panel">
+          <h2>Blog</h2>
+          <form id="post-form" class="form-inline">
+            <input id="post-title" placeholder="Title" required>
+            <textarea id="post-body" placeholder="Write your post here..." required></textarea>
+            <div class="form-actions">
+              <button type="submit">Add Post</button>
+              <button type="button" id="clear-posts">Clear All Posts</button>
+            </div>
+          </form>
+
+          <div id="posts"></div>
+        </section>
+
+        <section id="habits" class="panel">
+          <h2>Habit Tracker</h2>
+          <p class="muted">Check off habits each day. History kept locally.</p>
+          <div id="habits-app"></div>
+          <form id="add-habit-form" class="small-form">
+            <input id="new-habit-name" placeholder="Add custom habit (e.g. WoW grind)">
+            <button type="submit">Add Habit</button>
+          </form>
+        </section>
+
+        <section id="reminders" class="panel">
+          <h2>Reminders</h2>
+          <p class="muted">Set reminders — notifications work while the page is open (Grant permission when prompted).</p>
+          <form id="reminder-form" class="small-form">
+            <input id="reminder-title" placeholder="Reminder title" required>
+            <input id="reminder-datetime" type="datetime-local" required>
+            <button type="submit">Set Reminder</button>
+          </form>
+          <div id="reminders-list"></div>
+        </section>
+
+        <section id="trackers" class="panel">
+          <h2>Custom Trackers</h2>
+          <p class="muted">Create manual trackers (counters, text notes).</p>
+          <form id="add-tracker-form" class="small-form">
+            <input id="tracker-name" placeholder="Tracker name" required>
+            <select id="tracker-type">
+              <option value="counter">Counter</option>
+              <option value="note">Note</option>
+            </select>
+            <button type="submit">Add Tracker</button>
+          </form>
+          <div id="trackers-list"></div>
+        </section>
+
+        <section id="anime" class="panel">
+          <h2>MyAnimeList</h2>
+          <p class="muted">View my list on MyAnimeList:</p>
+          <p><a href="https://myanimelist.net/animelist/nisiare?status=7" target="_blank">https://myanimelist.net/animelist/nisiare?status=7</a></p>
+        </section>
+
+        <section id="about" class="panel">
+          <h2>About / Help</h2>
+          <p>This is a static, nostalgic 2000s-style single-page site. All data is stored locally in your browser (localStorage). Posts, habits, reminders, and trackers persist on this device/browser only.</p>
+          <p>Notes:
+            <ul>
+              <li>Reminders: browser notifications will only fire when you have the page open (or have a supporting service worker + server).</li>
+              <li>Habit "take shower" is left free-form — mark when you shower; you can set frequency in notes.</li>
+            </ul>
+          </p>
+        </section>
+
+      </main>
+    </div>
+
+    <footer class="footer">&copy; nisiare — personal portal</footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
