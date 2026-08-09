@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <div id="page">
+  <div id="page" class="habit-page">
     <header class="header">
       <div class="header-inner">
         <h1><a href="/">nisiare</a></h1>
@@ -27,28 +27,46 @@
       </aside>
 
       <main class="main">
-        <section class="panel">
+        <section class="panel habit-panel">
           <h2>Habit calendar</h2>
-          <div id="habit-controls" style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
-            <button id="prev-month">◀</button>
-            <div id="month-label"></div>
-            <button id="next-month">▶</button>
-            <select id="habit-select"></select>
-            <button id="add-habit">Add habit</button>
-            <input id="new-habit-name" placeholder="new habit name" style="display:none">
+          <div class="habit-layout">
+            <div class="left-column">
+              <div class="small-frame" id="read-box">
+                <h4>READ</h4>
+                <div id="read-grid"></div>
+              </div>
+
+              <div class="small-frame">
+                <h4>MOOD</h4>
+                <div id="mood-row"></div>
+                <div id="mood-grid" style="margin-top:8px"></div>
+              </div>
+
+              <div class="small-frame">
+                <h4>TO-DO</h4>
+                <input id="todo-input" placeholder="new task...">
+                <ul id="todo-list" class="todo-list"></ul>
+              </div>
+            </div>
+
+            <div class="right-column">
+              <div class="habit-controls">
+                <button id="prev-month">◀</button>
+                <div id="month-label"></div>
+                <button id="next-month">▶</button>
+                <select id="habit-select"></select>
+                <button id="add-habit">Add habit</button>
+                <input id="new-habit-name" placeholder="new habit..." style="display:none">
+              </div>
+
+              <div id="calendar" class="habit-large"></div>
+
+              <div class="small-frame" id="daily-habits">
+                <h4 id="day-label"></h4>
+                <div id="daily-list"></div>
+              </div>
+            </div>
           </div>
-          <div id="calendar"></div>
-        </section>
-
-        <section class="panel">
-          <h3>Mood</h3>
-          <div id="mood-row"></div>
-        </section>
-
-        <section class="panel">
-          <h3>To-do (daily)</h3>
-          <input id="todo-input" placeholder="new task...">
-          <ul id="todo-list"></ul>
         </section>
       </main>
     </div>

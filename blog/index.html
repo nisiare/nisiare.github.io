@@ -25,9 +25,8 @@
           </ul>
         </nav>
         <section class="box">
-          <h3>Write a post</h3>
-          <p>Posts are markdown files stored in <code>posts/</code>. You can add one via the GitHub web UI or use the form below to open a Pull Request (requires a GitHub token).
-          </p>
+          <h3>Posting</h3>
+          <p>To publish a post, add a markdown file into <code>posts/</code> (name it like <code>YYYY-MM-DD-title.md</code>) using the GitHub web UI or a normal commit. Files in that folder are rendered here for everyone.</p>
         </section>
       </aside>
 
@@ -36,20 +35,6 @@
           <h2>Posts</h2>
           <div id="posts-list">Loading posts…</div>
         </section>
-
-        <section class="panel">
-          <h3>Create a post (opens a Pull Request)</h3>
-          <p class="muted">This optional form will create a branch and open a Pull Request to add a markdown file to <code>posts/</code>. You must supply a Personal Access Token with <code>repo</code> scope. Do not paste long-lived tokens unless you understand the risks.</p>
-          <form id="create-post-form" class="small-form">
-            <input id="pr-name" placeholder="Your name (for the PR)" required>
-            <input id="post-title" placeholder="Post title" required>
-            <textarea id="post-content" placeholder="Write markdown..." required></textarea>
-            <input id="gh-token" placeholder="GitHub token (optional for PR)" autocomplete="off">
-            <div class="form-actions"><button type="submit">Create PR</button></div>
-          </form>
-          <div id="pr-result"></div>
-        </section>
-
       </main>
     </div>
 

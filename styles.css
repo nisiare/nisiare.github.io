@@ -32,3 +32,24 @@ button{background:var(--accent);border:1px solid #a77b6d;color:#fff;padding:6px 
 .tracker{border:1px dashed #e6ddd6;padding:8px;margin:8px 0}
 .footer{padding:10px;text-align:center;color:var(--muted);font-size:90%}
 @media(max-width:700px){.container{flex-direction:column}.sidebar{width:auto;border-right:none}}
+
+/* Habit page specific styling (dark calendar look) */
+.habit-page body{}
+.habit-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;padding:18px;background:#0f0e16;border:6px solid #ffffff;border-style:solid;box-shadow:0 0 0 6px #0f0e16 inset}
+.habit-cell{background:#0f0e16;color:#f3e9ff;border:2px solid rgba(255,255,255,0.06);min-height:64px;display:flex;align-items:center;justify-content:center;position:relative}
+.habit-cell.header{background:transparent;border:none;color:#c9b8e0;font-size:14px}
+.habit-cell.day{background:#14121a}
+.habit-cell .daynum{position:absolute;top:6px;left:6px;font-size:14px;color:#f0e9ff}
+.habit-cell .dot{position:absolute;bottom:6px;right:6px;width:8px;height:8px;border-radius:50%;background:transparent}
+.habit-cell.day.done .dot{background:#7fd3b6}
+.habit-panel{background:#0d0c10;border:6px solid #fff;padding:12px;color:#efe8f3;margin-bottom:12px}
+.small-frame{border:6px solid #fff;padding:10px;margin-bottom:12px;background:#0d0c10;color:#efe8f3}
+.mood-row button{margin:4px;background:#16151a;color:#fff;border:1px solid rgba(255,255,255,0.06);padding:6px}
+.mood-row button.selected{outline:2px solid #7fd3b6}
+.todo-list li{list-style:none;padding:6px;border-bottom:1px dashed rgba(255,255,255,0.03)}
+.habit-controls{display:flex;gap:8px;align-items:center;margin-bottom:12px}
+
+/* layout for habit page panels */
+.habit-layout{display:grid;grid-template-columns:300px 1fr;gap:18px}
+.left-column .small-frame{min-height:160px}
+.right-column .habit-large{min-height:360px}
