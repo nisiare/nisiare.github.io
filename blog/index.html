@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>nisiare — blog</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div id="page">
+    <header class="header">
+      <div class="header-inner">
+        <h1><a href="/">nisiare</a></h1>
+        <p class="tag">blog</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <aside class="sidebar">
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/habits/">Habits</a></li>
+            <li><a href="/trackers/">Trackers</a></li>
+          </ul>
+        </nav>
+        <section class="box">
+          <h3>Write a post</h3>
+          <p>Posts are markdown files stored in <code>posts/</code>. You can add one via the GitHub web UI or use the form below to open a Pull Request (requires a GitHub token).
+          </p>
+        </section>
+      </aside>
+
+      <main class="main">
+        <section class="panel">
+          <h2>Posts</h2>
+          <div id="posts-list">Loading posts…</div>
+        </section>
+
+        <section class="panel">
+          <h3>Create a post (opens a Pull Request)</h3>
+          <p class="muted">This optional form will create a branch and open a Pull Request to add a markdown file to <code>posts/</code>. You must supply a Personal Access Token with <code>repo</code> scope. Do not paste long-lived tokens unless you understand the risks.</p>
+          <form id="create-post-form" class="small-form">
+            <input id="pr-name" placeholder="Your name (for the PR)" required>
+            <input id="post-title" placeholder="Post title" required>
+            <textarea id="post-content" placeholder="Write markdown..." required></textarea>
+            <input id="gh-token" placeholder="GitHub token (optional for PR)" autocomplete="off">
+            <div class="form-actions"><button type="submit">Create PR</button></div>
+          </form>
+          <div id="pr-result"></div>
+        </section>
+
+      </main>
+    </div>
+
+    <footer class="footer">&copy; nisiare</footer>
+  </div>
+  <script src="/blog/blog.js"></script>
+</body>
+</html>

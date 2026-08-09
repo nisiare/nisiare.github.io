@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>nisiare — habits</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div id="page">
+    <header class="header">
+      <div class="header-inner">
+        <h1><a href="/">nisiare</a></h1>
+        <p class="tag">habits</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <aside class="sidebar">
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/trackers/">Trackers</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <section class="panel">
+          <h2>Habit calendar</h2>
+          <div id="habit-controls" style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
+            <button id="prev-month">◀</button>
+            <div id="month-label"></div>
+            <button id="next-month">▶</button>
+            <select id="habit-select"></select>
+            <button id="add-habit">Add habit</button>
+            <input id="new-habit-name" placeholder="new habit name" style="display:none">
+          </div>
+          <div id="calendar"></div>
+        </section>
+
+        <section class="panel">
+          <h3>Mood</h3>
+          <div id="mood-row"></div>
+        </section>
+
+        <section class="panel">
+          <h3>To-do (daily)</h3>
+          <input id="todo-input" placeholder="new task...">
+          <ul id="todo-list"></ul>
+        </section>
+      </main>
+    </div>
+    <footer class="footer">&copy; nisiare</footer>
+  </div>
+  <script src="/habits/habits.js"></script>
+</body>
+</html>

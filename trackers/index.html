@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>nisiare — trackers</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div id="page">
+    <header class="header">
+      <div class="header-inner">
+        <h1><a href="/">nisiare</a></h1>
+        <p class="tag">trackers</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <aside class="sidebar">
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/habits/">Habits</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <section class="panel">
+          <h2>Custom trackers</h2>
+          <p class="muted">Create counters and manual trackers for things like WoW progress.</p>
+          <form id="add-tracker" class="small-form">
+            <input id="tracker-name" placeholder="Tracker name" required>
+            <select id="tracker-kind"><option value="counter">Counter</option><option value="note">Note</option></select>
+            <button type="submit">Add</button>
+          </form>
+          <div id="trackers"></div>
+        </section>
+      </main>
+    </div>
+    <footer class="footer">&copy; nisiare</footer>
+  </div>
+  <script src="/trackers/trackers.js"></script>
+</body>
+</html>
