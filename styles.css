@@ -35,13 +35,14 @@ button{background:var(--accent);border:1px solid #a77b6d;color:#fff;padding:6px 
 
 /* Habit page specific styling (dark calendar look) */
 .habit-page body{}
-.habit-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;padding:18px;background:#0f0e16;border:6px solid #ffffff;border-style:solid;box-shadow:0 0 0 6px #0f0e16 inset}
-.habit-cell{background:#0f0e16;color:#f3e9ff;border:2px solid rgba(255,255,255,0.06);min-height:64px;display:flex;align-items:center;justify-content:center;position:relative}
-.habit-cell.header{background:transparent;border:none;color:#c9b8e0;font-size:14px}
-.habit-cell.day{background:#14121a}
-.habit-cell .daynum{position:absolute;top:6px;left:6px;font-size:14px;color:#f0e9ff}
-.habit-cell .dot{position:absolute;bottom:6px;right:6px;width:8px;height:8px;border-radius:50%;background:transparent}
-.habit-cell.day.done .dot{background:#7fd3b6}
+.habit-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;padding:18px;background:#0f0e16;padding:12px}
+.habit-grid .habit-cell{background:#14121a;color:#f3e9ff;border:2px solid rgba(255,255,255,0.06);min-height:84px;display:flex;align-items:center;justify-content:center;position:relative}
+.habit-grid .habit-cell.header{background:transparent;border:none;color:#c9b8e0;font-size:14px;min-height:36px}
+.habit-grid .habit-cell.empty{background:transparent;border:none}
+.habit-grid .habit-cell.day{background:#14121a}
+.habit-grid .habit-cell .daynum{position:absolute;top:6px;left:6px;font-size:14px;color:#f0e9ff}
+.habit-grid .habit-cell .dot{position:absolute;bottom:6px;right:6px;width:8px;height:8px;border-radius:50%;background:transparent}
+.habit-grid .habit-cell.day.done .dot{background:#7fd3b6}
 .habit-panel{background:#0d0c10;border:6px solid #fff;padding:12px;color:#efe8f3;margin-bottom:12px}
 .small-frame{border:6px solid #fff;padding:10px;margin-bottom:12px;background:#0d0c10;color:#efe8f3}
 .mood-row button{margin:4px;background:#16151a;color:#fff;border:1px solid rgba(255,255,255,0.06);padding:6px}
@@ -53,3 +54,22 @@ button{background:var(--accent);border:1px solid #a77b6d;color:#fff;padding:6px 
 .habit-layout{display:grid;grid-template-columns:300px 1fr;gap:18px}
 .left-column .small-frame{min-height:160px}
 .right-column .habit-large{min-height:360px}
+
+/* Support alternate class names used in older markup: .calgrid and .calday */
+.calgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;background:transparent;padding:12px}
+.calgrid .dow{background:transparent;color:#6b4036;padding:8px;font-weight:700;text-align:center}
+.calgrid .calday{min-height:84px;background:#14121a;color:#f3e9ff;border:2px solid rgba(255,255,255,0.06);position:relative;display:flex;align-items:center;justify-content:center}
+.calgrid .calday.empty{background:transparent;border:none}
+.calgrid .calday > div:first-child{position:absolute;top:6px;left:6px;font-size:14px}
+.calgrid .calday .dot{position:absolute;bottom:6px;right:6px;width:8px;height:8px;border-radius:50%;background:transparent}
+.calgrid .calday .dot.full{background:#7fd3b6}
+.calgrid .calday.today{outline:2px solid rgba(127,211,182,0.12)}
+
+/* Ensure the calendar area expands horizontally and doesn't force day-of-week column stack */
+.habit-panel .habit-large, .calgrid, .habit-grid{width:100%;max-width:100%;}
+
+/* Make sure sidebar doesn't collapse the main area too small */
+@media(min-width:801px){
+  .container{align-items:start}
+  .main{min-width:600px}
+}
